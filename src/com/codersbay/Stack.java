@@ -19,6 +19,15 @@ public class Stack {
     }
 
     public int pop(){
+
+        if (this.myStack.size() == 0){
+            try {
+                throw new StackTooSmallException();
+            } catch (StackTooSmallException e) {
+                e.printStackTrace();
+            }
+        }
+
         int maxIndex = this.myStack.size() - 1;
         int maxNumb =  this.myStack.get(maxIndex);
         this.myStack.remove(maxIndex);
@@ -26,12 +35,28 @@ public class Stack {
     }
 
     public int peek(){
+
+        if (this.myStack.size() == 0){
+            try {
+                throw new StackTooSmallException();
+            } catch (StackTooSmallException e) {
+                e.printStackTrace();
+            }
+        }
         int maxIndex = this.myStack.size() - 1;
         int maxNumb = this.myStack.get(maxIndex);
         return maxNumb;
     }
 
     public int[] pop(int n){
+
+        if (this.myStack.size() < n){
+            try {
+                throw new StackTooSmallException();
+            } catch (StackTooSmallException e) {
+                e.printStackTrace();
+            }
+        }
 
         int[] someSelectedInts = new int[n];
         int actualPosition = -1;
@@ -60,5 +85,3 @@ public class Stack {
                 '}';
     }
 }
-
-

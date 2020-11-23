@@ -32,6 +32,7 @@ public class Test {
 
         stack.pop();
         assertEquals(1, stack.size());
+        assertEquals(2, stack.myStack.get(0));
     }
 
     @org.junit.jupiter.api.Test
@@ -46,6 +47,8 @@ public class Test {
 
         stack.pop(2);
         assertEquals(2, stack.size());
+        assertEquals(2, stack.myStack.get(0));
+        assertEquals(4, stack.myStack.get(1));
     }
 
 }

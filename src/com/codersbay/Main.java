@@ -26,6 +26,13 @@ public class Main {
 
         System.out.println(firstStack + " " + Arrays.toString(firstStack.pop(3)));
 
+        System.out.println(firstStack.pop());
+
+        ArrayList<Integer> secArrayList = new ArrayList<>();
+        Stack secStack = new Stack(secArrayList);
+
+        secStack.pop();
+
 
     }
     
